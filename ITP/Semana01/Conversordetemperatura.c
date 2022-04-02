@@ -9,10 +9,13 @@ int main(){
     switch (temperaturaatual) {
         //caso a temperatura atual seja celsius 
         case 'C':
-            //para transformar em feren
+            //para transformar em fahrenheit
             if(temperaturaconveter == 'F'){
                 printf("%.2f F\n",(num*1.8) + 32);
-            }else{
+            }
+            //Para transformar em kelvin 
+            else{
+            
                 printf("%.2f k\n",num + 273.15);
             }
             break;
