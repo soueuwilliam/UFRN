@@ -15,11 +15,15 @@ int main(){
             }
             //Para transformar em kelvin 
             else{
-            
                 printf("%.2f k\n",num + 273.15);
             }
             break;
-            
+        //caso o valor atual ofr fahrenheit    
+        case 'F':
+            //para trasformar em celsius
+            if(temperaturaaconverter == 'C'){
+              
+            }
 
     }
     return 0;
