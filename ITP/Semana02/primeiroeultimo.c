@@ -1,16 +1,22 @@
 #include <stdio.h>
 
 int main(){
-  int contador, numero = 1234568;
-  int inicio,fim;
-
+  //Declarando variaveis 
+  int numero;
+  int inicio = 0,fim = 0;
+  //Recebendo a entrada
+  scanf("%d",&numero);
+  //pegando o ultimo algarismo 
+  fim = numero%10;
   while(numero%10 != 0){
-    printf("%d\n",numero%10);
-    numero = numero/10;
-    if(numero/10 != 0){
-      inicio = numero/10;
+    numero /= 10;
+    //pegando o primeiro algarismo do numero
+    if(numero%10 != 0){
+      inicio = numero;
     }
   }
-  printf("%d",inicio);
+  printf("O último numero é: %d\n",fim);
+  printf("O primeiro número é: %d\n",inicio);
+  printf("A soma é: %d\n",inicio + fim);
   return 0;
 }
