@@ -25,5 +25,6 @@ int main(){
         scanf("%d %d",&value, &base);
         Conversao(value,base);
     }
+    printf("TESTE");
     return 0;
 }
