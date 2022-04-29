@@ -11,6 +11,7 @@ int testa_divisor(int numero,int divisor){
         return 1;
     }
 }
+//Função para somar os divisores
 int soma_divisores(int value){
    int i =1;
    int soma = 0;
@@ -21,14 +22,36 @@ int soma_divisores(int value){
         }
     return soma;
 }
+//Funções para testar se é amigos 
+int testa_amigos(int num1 ,int num2){
+    if(soma_divisores(num1) == num2 && soma_divisores(num2) == num1){
+        return 0;
+    }
+    else{
+        return 1;
+    }
+}
+    
 int main(){
-    //declaração de variaveis
-    int num1 , num2;
-    int i = 1;
-
-    //Entrada de valores
-    scanf("%d",&num1);
-    printf("%d",soma_divisores(num1));
-
+    //declaração de Variavel
+    int intervaloAini,intervaloAfinal,intervaloBini,intervaloBfinal;
+    int Temamigos = 0;
+    int i,j;
+    //entradas de valores
+    scanf("%d %d",&intervaloAini,&intervaloAfinal);
+    scanf("%d %d",&intervaloBini,&intervaloBfinal);
+    //teste no intervalo
+    for(i = intervaloAini; i <= intervaloAfinal; i++){
+        for (j = intervaloBini; j <=intervaloBfinal; j++){
+            if (testa_amigos(i,j) == 0 && i != j)
+            {
+                printf("O %d possui um amigo!\n",i);
+                Temamigos++;
+            }        
+        }    
+    }
+    if(Temamigos == 0){
+        printf("Os intervalos nao apresentam amigos!\n");
+    }
     return 0;
 }
