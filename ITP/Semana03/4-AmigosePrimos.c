@@ -51,7 +51,9 @@ int teste_Primo(int Numero){
 
 }
 int main(){
-    int num1,num2;
-
-    return 0;
+  int num1,num2;
+  scanf("%d", &num1);
+  
+  
+  return 0;
 }
