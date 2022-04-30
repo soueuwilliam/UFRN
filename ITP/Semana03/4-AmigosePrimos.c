@@ -23,15 +23,19 @@ int soma_divisores(int value){
 }
 //Funções para testar se é amigos 
 int testa_amigos(int num1 ,int num2){
+    //casos sejam amigos
     if(soma_divisores(num1) == num2 && soma_divisores(num2) == num1){
+        printf("Os numeros <%d,%d> sao amigos!\n", num1, num2);
         return 0;
     }
+    //casos não sejam amigos
     else{
+        printf("Os numeros <%d,%d> nao sao amigos!\n", num1, num2);
         return 1;
     }
 }
 int teste_Primo(int Numero){
-    int divisores = 1;
+    int divisores = 0;
     int i = 0;
     for(i = 1 ;i<Numero+1;i++){
         if(Numero%i == 0){
@@ -40,20 +44,36 @@ int teste_Primo(int Numero){
     }
     //caso não for primo
     if(divisores>2){
-        printf("O numero %d é nao primo!");
+        printf("O numero %d nao e primo! ",Numero);
         return 0;
     }
     //caso for primo
     else{
-        printf("O numero %d é primo!");
+        printf("O numero %d e primo! ",Numero);
         return 1;
     }
 
 }
 int main(){
   int num1,num2;
+
   scanf("%d", &num1);
-  
-  
-  return 0;
+  if(num1 == 0){
+      return 0;
+  }
+  teste_Primo(num1);
+  printf("\n");
+  do{
+        scanf("%d", &num2);
+        
+        if(num2 == 0){
+            break;
+        }
+        
+        teste_Primo(num2);
+        testa_amigos(num1, num2);
+        num1 = num2;
+    }while(num1 != 0);
+    
+    return 0;
 }
