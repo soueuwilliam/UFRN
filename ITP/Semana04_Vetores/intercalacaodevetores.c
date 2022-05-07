@@ -11,7 +11,6 @@ int intecalacao(int tamA,int tamB, int vetorA[tamA],int vetorB[tamB]){
          if(i < tamB){
             printf("%d ", vetorB[i]);
         }
-       
     }
 }
 
