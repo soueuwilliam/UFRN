@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int intecalacao(int tamA,int tamB, int vetorA[tamA],int vetorB[tamB]){
+void intecalacao(int tamA,int tamB, int vetorA[tamA],int vetorB[tamB]){
     int i;
     printf("Resultado: ");
     for (i = 0; i < tamA + tamB; i++)
