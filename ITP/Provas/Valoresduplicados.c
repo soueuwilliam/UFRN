@@ -11,8 +11,8 @@ int main(){
     scanf("%d",&vetor[i]);
   }
   for(int i = 0;i<tamvetor;i++){
-    for(int j = i;j<tamvetor;j++){
-      if(vetor[i] == vetor[j+1]){
+    for(int j = i+ 1;j<tamvetor;j++){
+      if(vetor[i] == vetor[j]){
         printf("%d ",vetor[i]);
       }  
     }
