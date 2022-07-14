@@ -131,18 +131,16 @@ void limpatela(){
 
 int main(){
 
-    
-    
 
-    
-
+    if (Menu() == 2){
         int erros = 0;
         char p_sec[100];
         char p_tela[100];
+       
         
         printf("JOGADOR 1:\n");
         printf("Palavra secreta:\n");
-        fgets(p_sec,99,stdin);
+        scanf(" %s",p_sec);
         printf("A palavra Secreta e: %s ",p_sec);
         printf("A palavra tem %i caracteres", strlen(p_sec) - 1);
         
@@ -153,7 +151,7 @@ int main(){
 
         int i = 0;
         
-        for(i =0;i< strlen(p_tela)-1;i++){
+        for(i =0;i< strlen(p_tela);i++){
             p_tela[i] = '_';
         }
 
@@ -197,7 +195,7 @@ int main(){
 
             //verifica se ganhou
             if(strcmp(p_tela,p_sec) == 0){
-                printf(" A palavra é :%s",p_tela); 
+                printf(" A palavra e : %s\n",p_tela); 
                 printf("ganhou");
                 break;
             }
@@ -207,10 +205,10 @@ int main(){
             if(erros == 6){
 
                 forca(erros);
-                printf("A palavra correta era:")
+                printf("A palavra correta era : %s",p_sec);
                 break;
             } 
         }
-
+    }
     return 0;
 }
