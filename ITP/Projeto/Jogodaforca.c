@@ -144,15 +144,15 @@ int Menu(){
 
   //Variavel de opção
   int op;
-  printf(" ---------------------------");
-  printf("|      JOGO DA FORCA        |");
-  printf(" ---------------------------");
-  printf("Digite uma das opções abaixo:");
-  printf("1 - Jogar sozinho");
-  printf("2 - jogar com outro jogador");
-  printf("3 - sobre o jogo");
-  printf("4- Créditos");
-  scanf("%d", &op);
+  printf(" ---------------------------\n");
+  printf("|      JOGO DA FORCA        |\n");
+  printf(" ---------------------------\n");
+  printf("Digite uma das opções abaixo:\n");
+  printf("1 - Jogar sozinho\n");
+  printf("2 - jogar com outro jogador\n");
+  printf("3 - sobre o jogo\n");
+  printf("4- Créditos\n");
+  scanf(" %d", &op);
 
   switch (op)
   {
@@ -175,47 +175,34 @@ int Menu(){
     break;
   }
 
-  
 
 }
-
-
-
-
-
-
-
-
-
-
-
-int main(void) {
-  int i;
-
-  //Para gerar números aleatórios
-  srand((unsigned)time(NULL));
+void doisjogadores(){
+  int i ;
+  setbuf(stdin,NULL); 
+      
   //printar dizendo que é a vez do jogador 1 jogar
   Jogador1Printf();
   char p_sec[100];//palavra secreta
-  
+      
   fgets(p_sec, 100, stdin);
   //formata a palava secreta em maiusculo
   for( i = 0; i<strlen(p_sec); i++){
     p_sec[i]=toupper(p_sec[i]);
   }
   limpartela(); //limpar tela
-    
+        
   //retira o ultimo caracter de p_sec que esta a mais devido a captura ser com fgets()
   p_sec[strlen(p_sec)-1]='\0';
   char p_tela[100];//palavra para tela
   strcpy(p_tela, p_sec);//copia de p_sec 
-  
-  
+      
+      
   //substitui letras por '_'
   for( i=0;i<strlen(p_tela);i++){
     p_tela[i]='_';
   }
-  
+      
   int erros = 0;
   int chances = 6;
   while(1){
@@ -242,10 +229,10 @@ int main(void) {
     for(i=0;i<strlen(p_tela); i++){
       if(toupper(letra)==toupper(p_sec[i])){//certo
         p_tela[i]=toupper(letra);
-        sera_que_errou=0;
+          sera_que_errou=0;
       } 
     }
-  
+      
     //senao, incrementa erros
     if(sera_que_errou==1){
       erros++;
@@ -266,8 +253,22 @@ int main(void) {
       //perdeu
       perdeu(p_sec,erros);
       break;
-    }
+        }
+      }
+}
+
+
+int main(void) {
+
+  int i;
+  //Para gerar números aleatórios
+  srand((unsigned)time(NULL));
+
+  if(Menu() == 2){
+    doisjogadores();
+
   }
+  
 
   return 0;
 }
