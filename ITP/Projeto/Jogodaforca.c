@@ -257,18 +257,28 @@ void doisjogadores(){
       }
 }
 
-
-int main(void) {
-
-  int i;
+void Contraocomputador(){
   //Para gerar números aleatórios
   srand((unsigned)time(NULL));
 
-  if(Menu() == 2){
-    doisjogadores();
+}
 
-  }
+int main(void) {
+  //Para gerar números aleatórios
+  srand((unsigned)time(NULL));
+
+  switch (Menu())
+  {
+
+  case 1 :
+     
+  case 2:
+    doisjogadores();
+    break;
   
+  default:
+    break;
+  }
 
   return 0;
-}
+} 
